@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: a clone of Snowflake database
+    database: SRI_TRAINING
+    tables:
+      - name: customers
+        description: Raw customer data
+        columns:
+          - name: id
+            description: Primary key for customer
+            test:
+              - unique
+              - not null
+      - name: orders
+        description: Raw order data
+        columns:
+         - name: id
+           description: Primary key for orders
+           test:
+              - unique
+              - not null
