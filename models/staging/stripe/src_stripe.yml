@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: STRIPE
+    database: SRI_TRAINING
+    tables:
+      - name: PAYMENT

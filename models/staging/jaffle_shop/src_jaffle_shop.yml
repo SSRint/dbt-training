@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: a clone of Snowflake database
+    database: SRI_TRAINING
+    tables:
+      - name: customers
+        description: Raw customer data
+        columns:
+          - name: id
+            description: Primary key for customer
+            test:
+              - unique
+              - not null
+      - name: orders
+        description: Raw order data
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 10, period: day}
+        columns:
+         - name: id
+           description: Primary key for orders
+           test:
+              - unique
+              - not null
