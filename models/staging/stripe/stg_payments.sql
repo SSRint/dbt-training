@@ -9,6 +9,6 @@ with payments as (
     amount / 100 as amount,
     created as created_at
 
-from sri_training.stripe.payment 
+from  from {{ source('STRIPE', 'PAYMENT') }} 
 )
-select * from sri_training.stripe.payment 
+select * from payments 
