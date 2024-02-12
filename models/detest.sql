@@ -1,0 +1,1 @@
+select {{get_start_date("2022-01-02")}} as wanted_date
